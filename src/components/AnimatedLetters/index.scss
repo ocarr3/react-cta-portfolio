@@ -1,0 +1,47 @@
+.text-animate {
+    display: inline-block;
+    opacity: 0;
+    animation: bounceIn 1s 1s;
+    animation-fill-mode: forwards;
+    min-width: 10px;
+}
+
+.text-animate-cta{
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 1s 1s;
+    animation-fill-mode: forwards;
+    min-width: 10px;
+}
+
+.text-animate-hover {
+    min-width: 10px;
+    display: inline-block;
+    animation-fill-mode: both;
+
+    &:hover {
+        animation: rubberBand 1s;
+        color: #7655ec;
+    }
+}
+
+.cta-text-animate-hover {
+    min-width: 10px;
+    display: inline-block;
+
+    &:hover {
+        color: #fff;
+    }
+}
+
+@for $i from 1 through 36 {
+    .text-animate._#{$i} {
+        animation-delay: #{calc($i / 10)}s;
+    }
+}
+
+@for $i from 1 through 100 {
+    .text-animate-cta._#{$i} {
+        animation-delay: #{calc($i / 10)}s;
+    }
+}

@@ -1,0 +1,94 @@
+@font-face {
+    font-family: 'WixMadeforDisplay';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/fonts/WixMadeforDisplay-Medium.ttf') 
+}
+
+@font-face {
+    font-family: 'Kanit-ExtraLightItalic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/fonts/Kanit-ExtraLightItalic.ttf')
+}
+
+.home-page {
+
+    .text-zone {
+        position: absolute;
+        left: 10%;
+        font-size: large;
+        top: 20%;
+        transform: translateY(-10%);
+        max-width: 90%;
+        min-width: 30%;
+
+        
+    }
+
+
+    h1 {
+        color: #fff;
+        font-size: 53px;
+        margin: 1;
+        font-family: 'WixMadeForDisplay';
+
+        &::before {
+            content: "<h1> ";
+            color: #7655ec;
+            font-size: 20px;
+            position: absolute;
+            margin-top: -40px;
+            font-family: 'Kanit-ExtraLightItalic';
+            opacity: 0.6;
+        }
+
+        &::after {
+            content: '<h1/>';
+            font-family: 'Kanit-ExtraLightItalic';
+            color: #7655ec;
+            opacity: 0.6;
+            font-size: 20px;
+            position: absolute;
+            margin-top: 18px;
+            margin-left: 20px;
+            animation: fadeIn 1s 1.7s backwards;
+            
+        }
+
+        img {
+            width: 32px;
+
+        }
+    }
+
+    h2 {
+        color: #ffffff80;
+        font-family: 'WixMadeForDisplay';
+        font-size: 15px;
+        letter-spacing: 2px;
+        margin-top: 20px;
+        animation: fade1n 1s 1.8s backwards;
+    }
+    
+    .flat-button {
+        color: #7655ec;
+        font-size: 16px;
+        letter-spacing: 4px;
+        font-family: sans-serif;
+        text-decoration: none;
+        padding: 10px 18px;
+        border: 1px solid;
+        margin-top: 25px;
+        float: left;
+        animation: fadeIn 1s 1.8s backwards;
+        white-space: nowrap;
+
+        &:hover {
+            background: #7655ec;
+            color: #333;
+        }
+
+    }
+
+}
