@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/react-cta-portfolio/static/css/main.3770366d.css",
-    "main.js": "/react-cta-portfolio/static/js/main.aaa55a2d.js",
+    "main.css": "/react-cta-portfolio/static/css/main.e70c678f.css",
+    "main.js": "/react-cta-portfolio/static/js/main.1b250965.js",
     "static/js/787.7bae2128.chunk.js": "/react-cta-portfolio/static/js/787.7bae2128.chunk.js",
     "static/media/Kanit-ExtraLightItalic.ttf": "/react-cta-portfolio/static/media/Kanit-ExtraLightItalic.dfb7cf7deb4c46d3b7dc.ttf",
     "static/media/WixMadeforDisplay-Medium.ttf": "/react-cta-portfolio/static/media/WixMadeforDisplay-Medium.98bee1e7f025bd2618cc.ttf",
     "static/media/logo-s.png": "/react-cta-portfolio/static/media/logo-s.bfc9f81846bda5218dab.png",
     "index.html": "/react-cta-portfolio/index.html",
-    "main.3770366d.css.map": "/react-cta-portfolio/static/css/main.3770366d.css.map",
-    "main.aaa55a2d.js.map": "/react-cta-portfolio/static/js/main.aaa55a2d.js.map",
+    "main.e70c678f.css.map": "/react-cta-portfolio/static/css/main.e70c678f.css.map",
+    "main.1b250965.js.map": "/react-cta-portfolio/static/js/main.1b250965.js.map",
     "787.7bae2128.chunk.js.map": "/react-cta-portfolio/static/js/787.7bae2128.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3770366d.css",
-    "static/js/main.aaa55a2d.js"
+    "static/css/main.e70c678f.css",
+    "static/js/main.1b250965.js"
   ]
 }
