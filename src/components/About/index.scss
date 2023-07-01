@@ -1,12 +1,10 @@
 .stage-cube-cont {
-    width: 30%;
+    min-width: 40%;
     height: 100%;
-    top: 0;
-    padding-top: 18%;
-    margin-left: 0;
-    position: absolute;
-    right:  0;
-    overflow: hidden;
+    top: 35%;
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .cubespinner {
@@ -16,7 +14,8 @@
     animation-duration: 12s;
     transform-style: preserve-3d;
     transform-origin: 100px 100px 0;
-    margin-left: calc(50% - 100px);
+   
+
 
     div{
         position: absolute;
@@ -71,4 +70,22 @@
     83%{
         transform: rotateX(90deg);
     }
+
+    
+}
+
+.about-page {
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    margin-right: 15%;
+
+    overflow-y: scroll;
+    .text-zone {
+        margin-top: 5%;
+        min-width: 35%;
+        position: relative;
+        
+    }
+    
 }

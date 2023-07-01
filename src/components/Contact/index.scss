@@ -1,6 +1,13 @@
 .contact-page {
     width: 100%;
-    margin: 20px;
+    padding: auto;
+    margin-right: 10%;
+
+    .text-zone {
+        width: auto;
+        right: 10%;
+        
+    }
 
     ul {
         padding: 0;
@@ -68,4 +75,6 @@
         border-radius: 4px;
 
     }
+
+    
 }
