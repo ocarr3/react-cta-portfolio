@@ -3,7 +3,7 @@
     width: 100%;
     height: 55px;
     position: absolute;
-    top: 0;
+    top: 0%;
     z-index: 3;
     min-height: 55px;
     
@@ -29,10 +29,10 @@
         align-items: baseline;
         vertical-align: top;
         flex-shrink: 1;
-        margin-top: -30px;
+        margin-top: 15px;
         width: 60%;
         min-width: 5%;
-        margin-left: 10%;
+        margin-left: 5%;
         :hover{
             color: #7655ec;
         }
@@ -81,7 +81,7 @@
         float: right;
         width: 10%;
         margin-left: 13%;
-        margin-top: -35px;
+        margin-top: 5px;
         height: 20px;
         align-items: baseline;
         display: inline-flex;
@@ -91,7 +91,15 @@
         flex-direction: row;
         font-size: medium;
         list-style-type: none;
-        text-decoration: none;
+        font-family:'WixMadeforDisplay';
+
+        .ul-text{    
+            color: #fff;
+            padding: 5px;
+            
+        }
+
+        
     
        
 

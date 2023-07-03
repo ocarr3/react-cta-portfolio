@@ -46,6 +46,9 @@ const Project = () => {
         <>
         <div className = "container project-page">
             <div className = "text-zone">
+                <h2>
+                    This page is under construction. But feel free to look around!
+                </h2>
                 <h1>
                     <AnimatedLetters 
                         letterClass={letterClass}

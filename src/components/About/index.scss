@@ -1,10 +1,12 @@
 .stage-cube-cont {
-    min-width: 40%;
+    min-width: 30%;
     height: 100%;
     top: 35%;
     position: relative;
     display: flex;
     justify-content: center;
+    margin: auto 0;
+    
 }
 
 .cubespinner {
@@ -77,13 +79,15 @@
 .about-page {
     display: flex;
     max-width: 100%;
+    min-width: 0%;
     flex-wrap: wrap;
-    margin-right: 15%;
+    margin-right: 10%;
 
     overflow-y: scroll;
     .text-zone {
         margin-top: 5%;
         min-width: 35%;
+        padding-right: 20%;
         position: relative;
         
     }

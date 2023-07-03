@@ -6,9 +6,6 @@ import {faHome, faUser, faEnvelope, faHandshake, faTrain} from '@fortawesome/fre
 import {faLinkedin, faGithub} from '@fortawesome/free-brands-svg-icons'
 const Navbar = () => (
     <div className='nav-bar'>
-        <Link className='logo' to ='=/'>
-            <img src={LogoHome}/>
-        </Link>
         <nav>
             <NavLink exact = "true" activeclassname= "active" to= "/">
                 <FontAwesomeIcon icon={faHome} color="#4d4d4e"/>
@@ -28,18 +25,21 @@ const Navbar = () => (
             </NavLink>
         </nav>
         <ul>
+            <div className='ul-text'>
+                Links
+            </div>
             <li>
                 <a target = "_blank" rel = "noreferrer" href='https://www.linkedin.com/notifications/?filter=all'>
                     <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e"></FontAwesomeIcon>
                 </a>
             </li>
             <li>
-                <a target = "_blank" rel = "noreferrer" href='https://github.com/ocarr3st'>
+                <a target = "_blank" rel = "noreferrer" href='https://github.com/ocarr3'>
                     <FontAwesomeIcon icon={faGithub} color="#4d4d4e"></FontAwesomeIcon>
                 </a>
             </li>
             <li>
-                <a target = "_blank" rel = "noreferrer" href='https://www.linkedin.com/notifications/?filter=all'>
+                <a target = "_blank" rel = "noreferrer" href='https://uic.joinhandshake.com/stu/users/26020384'>
                     <FontAwesomeIcon icon={faHandshake} color="#4d4d4e"></FontAwesomeIcon>
                 </a>
             </li>
