@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Omar Carrillo's Portfolio in React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I've made a 
 
 ## Available Scripts
 
