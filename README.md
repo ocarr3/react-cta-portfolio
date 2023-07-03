@@ -1,8 +1,9 @@
-# Omar Carrillo's Portfolio in React
+# Omar Carrillo's - Portfolio in React
 
 A portfolio project I started after graduating from University of Illinois at Chicago with a Bachelor's in Engineering with a Major in Computer Science
 
-## Available Scripts
+## Languages and guides used
+
 
 In the project directory, you can run:
 
