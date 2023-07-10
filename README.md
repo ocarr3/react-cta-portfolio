@@ -7,6 +7,10 @@ With experience in HTML/CSS/JS projects from my time in school I wanted to creat
 
 Having worked with the CTA Ridership database for ride data for 2021 for previous projects using just SQL and Python I wanted to make an interactive and easy to use application to request and view the ridership data in a digestible manner. 
 
+## Home/About/Contact Pages
+
+D
+
 ## Guides I found helpful while working on this
 
 ### React Portfolio Tutorial - https://www.youtube.com/watch?v=bmpI252DmiI
