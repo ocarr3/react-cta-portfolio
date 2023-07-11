@@ -2,7 +2,7 @@ import './index.scss'
 import { Link, NavLink } from 'react-router-dom'
 import LogoHome from '../../assets/images/logo-s.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faHome, faUser, faEnvelope, faHandshake, faTrain} from '@fortawesome/free-solid-svg-icons'
+import {faHome, faUser, faEnvelope, faHandshake, faTrain, faPaperclip} from '@fortawesome/free-solid-svg-icons'
 import {faLinkedin, faGithub} from '@fortawesome/free-brands-svg-icons'
 const Navbar = () => (
     <div className='nav-bar'>
@@ -23,11 +23,12 @@ const Navbar = () => (
                 <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e"/>
                 <div className="nav-text">Contact</div>
             </NavLink>
+            <NavLink exact = "true" activeclassname = "active" className= "resume-link" to= "/resume">
+                <FontAwesomeIcon icon={faPaperclip} color="#4d4d4e"/>
+                <div className="nav-text">Resume</div>
+            </NavLink>
         </nav>
         <ul>
-            <div className='ul-text'>
-                Links
-            </div>
             <li>
                 <a target = "_blank" rel = "noreferrer" href='https://www.linkedin.com/notifications/?filter=all'>
                     <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e"></FontAwesomeIcon>
@@ -43,6 +44,7 @@ const Navbar = () => (
                     <FontAwesomeIcon icon={faHandshake} color="#4d4d4e"></FontAwesomeIcon>
                 </a>
             </li>
+            
         </ul>
     </div>
 )
