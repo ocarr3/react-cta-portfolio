@@ -1,23 +1,46 @@
 import {useEffect, useState} from 'react';
+import "react-pdf/dist/esm/Page/TextLayer.css";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import {Loader} from 'react-loaders';
 import './index.scss';
-import AnimatedLetters from '../AnimatedLetters';
-import {useSpring, animated} from "react-spring";
-import { Document, Outline, Page } from 'react-pdf';
+import { Document, Page,} from 'react-pdf';
+import {PDFDownloadLink, StyleSheet} from '@react-pdf/renderer'
 import { pdfjs } from 'react-pdf';
+import { useWindowWidth} from '@wojtekmaj/react-hooks';
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
 
-
+const styles = StyleSheet.create({
+    page: {
+      flexDirection: 'row',
+      backgroundColor: '#E4E4E4'
+    },
+    section: {
+      margin: 10,
+      padding: 10,
+      flexGrow: 1
+    }
+  });
+  
+ 
 
 const Resume = () => {
+    const width = useWindowWidth();
     return (
+        <>
         <div className = 'container resume-page'>
             <div className = 'text-zone'>
-                <Document file = {'https://s3.amazonaws.com/handshake.production/documents/documents/039/170/640/original/resume.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2HSNSGACXF6KKT2H%2F20230711%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230711T025724Z&X-Amz-Expires=10&X-Amz-SignedHeaders=host&X-Amz-Signature=4088988f433bd2003a93495751b2056398a6ab5b9c4b598fb0ab43fbe4fcd901'}>
-                 <Page pageNumber={1}/>
+                <Document className = "pdf" file = {'https://ocarr3.github.io/react-cta-portfolio/resume.pdf'}>
+                     <Page pageNumber={1} width = {Math.min(width * 0.9, 650)}/>
                 </Document>
+                <div>
+                     <a target = "_blank" rel = "noreferrer" href='https://ocarr3.github.io/react-cta-portfolio/resume.pdf'><button className='download-button' >Download</button></a>
+                </div>
+
             </div>
         </div>
+        <Loader type = "pacman"/>
+        </>
+
     );
 }
 

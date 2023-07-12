@@ -8,15 +8,19 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@react-pdf/renderer": "^3.1.12",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@wojtekmaj/react-hooks": "^1.17.2",
     "animate.css": "^4.1.1",
     "gsap-trial": "^3.11.5",
     "leaflet": "^1.9.4",
     "loaders.css": "^0.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook": "^0.0.1",
+    "react-hooks": "^1.0.1",
     "react-leaflet": "^4.2.1",
     "react-loaders": "^3.0.1",
     "react-pdf": "^7.1.2",
@@ -33,7 +37,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "debug": "node --inspect server.js"
   },
   "eslintConfig": {
     "extends": [

@@ -1,17 +1,47 @@
+
+
 .resume-page {
     width: 100%;
-    height: 100%;
-    overflow-y: scroll;
+    height: 95%;
     
     align-items: center;
+    overflow-y: scroll;
     
     .text-zone {
-        width: 80%;
-        position: absolute;
-        top: 45%;
-        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        position: relative;
         margin-bottom: 10px;
         margin: auto;
+        .download-button {
+            color: #7655ec;
+            font-size: 16px;
+            letter-spacing: 2px;
+            font-family: sans-serif;
+            text-decoration: none;
+            padding: 2px 10px;
+            border: 1px solid;
+            margin-top: 7px;
+            float: left;
+            animation: fadeIn 1s 1.8s backwards;
+            white-space: nowrap;
+
+            &:hover {
+                background: #7655ec;
+                color: #333;
+            }
+        }
+
+
+        .pdf {
+            padding-top: 0px;
+            align-self: center;
+            margin: auto;
+            height: 100%;
+            animation: fadeIn 1s 1.8s backwards;
+        }
        
         
     }
@@ -23,13 +53,3 @@
     
 }
 
-.resume-page {
-    width: 100%;
-    text-align: center;
-    align-items: center;
-    float: left;
-}
-
-.page{
-    width: 100%;
-}
