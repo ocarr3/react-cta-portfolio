@@ -29,11 +29,11 @@ const Resume = () => {
         <>
         <div className = 'container resume-page'>
             <div className = 'text-zone'>
-                <Document className = "pdf" file = {'https://ocarr3.github.io/react-cta-portfolio/resume.pdf'}>
+                <Document className = "pdf" file = {'https://ocarr3.github.io/react-cta-portfolio/resume/resume.pdf'}>
                      <Page pageNumber={1} width = {Math.min(width * 0.9, 650)}/>
                 </Document>
                 <div>
-                     <a target = "_blank" rel = "noreferrer" href='https://ocarr3.github.io/react-cta-portfolio/resume.pdf'><button className='download-button' >Download</button></a>
+                     <a target = "_blank" rel = "noreferrer" href='https://ocarr3.github.io/react-cta-portfolio/resume/resume.pdf'><button className='download-button' >Download</button></a>
                 </div>
 
             </div>
