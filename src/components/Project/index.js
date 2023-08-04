@@ -27,7 +27,7 @@ const stations = {
     
 }
 
-$('containter map').on("mousedown", L.DomEvent.stopPropagation);
+
 
 const Project = () => {
     
