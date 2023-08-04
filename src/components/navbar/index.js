@@ -30,7 +30,7 @@ const Navbar = () => (
         </nav>
         <ul>
             <li>
-                <a target = "_blank" rel = "noreferrer" href='https://www.linkedin.com/notifications/?filter=all'>
+                <a target = "_blank" rel = "noreferrer" href='www.linkedin.com/in/omar-carrillo-882095195'>
                     <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e"></FontAwesomeIcon>
                 </a>
             </li>

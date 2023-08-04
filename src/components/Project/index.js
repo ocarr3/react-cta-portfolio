@@ -4,6 +4,7 @@ import './index.scss'
 import AnimatedLetters from '../AnimatedLetters';
 import {useSpring, animated} from "react-spring";
 import {MapContainer, TileLayer} from "react-leaflet";
+import {$, L} from 'jquery';
 import "leaflet/dist/leaflet.css";
 
 
@@ -26,7 +27,10 @@ const stations = {
     
 }
 
+$('containter map').on("mousedown", L.DomEvent.stopPropagation);
+
 const Project = () => {
+    
     const [letterClass, setLetterClass] = useState('text-animate-cta')
     
 
@@ -44,6 +48,7 @@ const Project = () => {
 
     return (
         <>
+        
         <div className = "container project-page">
             <div className = "text-zone">
                 <h2>
@@ -114,6 +119,9 @@ const Project = () => {
                 </div>
             </div>
         </div>
+        <script>
+            $('containter map').on("mousedown", L.DomEvent.stopPropagation);
+        </script>
         <Loader type = "pacman"/>
         </>
     )
