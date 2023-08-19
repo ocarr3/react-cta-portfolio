@@ -1,10 +1,13 @@
 import {useEffect, useState} from 'react';
+import * as React from "react";
 import {Loader} from 'react-loaders';
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters';
 import {useSpring, animated} from "react-spring";
-import {MapContainer, TileLayer} from "react-leaflet";
-import {$, L} from 'jquery';
+import {MapContainer, TileLayer, useMapEvents} from "react-leaflet";
+import ReactLeafletKml from 'react-leaflet-kml';
+import * as L from 'leaflet';
+
 import "leaflet/dist/leaflet.css";
 
 
@@ -23,27 +26,52 @@ const title2 = "rides were taken on the CTA."
 const subtitle1 = "on the bus, and"
 const subtitle2 = "on the train."
 
-const stations = {
-    
-}
+const LocationClick = () => {
+    const map = useMapEvents(
+        {
+            click(e) {
+                console.log(e.latlng)
+            },
+        }
+    );
+    return null
+};
 
 
 
 const Project = () => {
+
+    const [kml, setKml] = React.useState(null);
     
     const [letterClass, setLetterClass] = useState('text-animate-cta')
     
-
+    
     useEffect(() => {
+        
+
         let timeoutId = setTimeout(() => {
             setLetterClass('cta-text-animate-hover')
         }, 8000)
+
+        
         
 
         return () => {
             clearTimeout(timeoutId)
         }
-    }, [])
+    }, []);
+
+    React.useEffect(() => {
+        fetch (
+            "https://ocarr3.github.io/react-cta-portfolio/data/doc.kml"
+        )
+           .then((res) => res.text())
+           .then((kmlText) => {
+            const parser = new DOMParser();
+            const kml = parser.parseFromString(kmlText, "text/xml");
+            setKml(kml);
+           }); 
+    }, []);
 
 
     return (
@@ -110,18 +138,24 @@ const Project = () => {
                     Interact with the map of Chicago's 'L' route below to learn more about the ridership history of the city's public transportaion.
                 </p>
                 <div className='containter map'>
-                    <MapContainer center = {[41.8781, -87.6298]} zoom = {11.25}>
+                    <MapContainer center = {[41.8781, -87.6298]} zoom = {11.25} dragging = {false} zoomControl= {false} scrollWheelZoom = {false}  doubleClickZoom={false}>
                         <TileLayer
-                            attribution = 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://www.OpenRailwayMap.org">OpenRailwayMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-                            url = 'http://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png'
+                            attribution = 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://www.OpenStreetMap.org">OpenRailwayMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+                            url = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                         />
+                        <LocationClick/>
+                        {kml && <ReactLeafletKml kml = {kml} />}
                     </MapContainer>
                 </div>
+                <p>
+                    Click on a line on the CTA you're interested in on the map above and select from options below    
+                </p>
+                <p>
+                    The currently selected line is:   
+                </p>
             </div>
         </div>
-        <script>
-            $('containter map').on("mousedown", L.DomEvent.stopPropagation);
-        </script>
+        
         <Loader type = "pacman"/>
         </>
     )
