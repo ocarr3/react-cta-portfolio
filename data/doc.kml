@@ -25,7 +25,7 @@
     </LabelStyle>
     <LineStyle>
       <color>ff00aaff</color>
-      <width>2.000000</width>
+      <width>5.000000</width>
     </LineStyle>
     <PolyStyle>
       <color>00000000</color>
@@ -39,7 +39,7 @@
     </LabelStyle>
     <LineStyle>
       <color>ffff7000</color>
-      <width>2.000000</width>
+      <width>5.000000</width>
     </LineStyle>
     <PolyStyle>
       <color>00000000</color>
@@ -53,7 +53,7 @@
     </LabelStyle>
     <LineStyle>
       <color>ffdf73ff</color>
-      <width>2.000000</width>
+      <width>5.000000</width>
     </LineStyle>
     <PolyStyle>
       <color>00000000</color>
@@ -67,7 +67,7 @@
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
-      <width>2.000000</width>
+      <width>5.000000</width>
     </LineStyle>
     <PolyStyle>
       <color>00000000</color>
@@ -81,7 +81,7 @@
     </LabelStyle>
     <LineStyle>
       <color>ff445a89</color>
-      <width>2.000000</width>
+      <width>5.000000</width>
     </LineStyle>
     <PolyStyle>
       <color>00000000</color>
@@ -95,7 +95,7 @@
     </LabelStyle>
     <LineStyle>
       <color>ff4e4e4e</color>
-      <width>2.000000</width>
+      <width>5.000000</width>
     </LineStyle>
     <PolyStyle>
       <color>00000000</color>
@@ -109,7 +109,7 @@
     </LabelStyle>
     <LineStyle>
       <color>ff00a838</color>
-      <width>2.000000</width>
+      <width>5.000000</width>
     </LineStyle>
     <PolyStyle>
       <color>00000000</color>
@@ -123,7 +123,7 @@
     </LabelStyle>
     <LineStyle>
       <color>ffe600a9</color>
-      <width>2.000000</width>
+      <width>5.000000</width>
     </LineStyle>
     <PolyStyle>
       <color>00000000</color>
@@ -148,9 +148,9 @@
 
 <body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
 
-<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+<table style="font-family:Arial,Verdana,Times;font-size:1px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
 
-<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+<tr style="text-align:center;font-weight:bold;background:#9CBCE">
 
 <td>Yellow Line</td>
 
