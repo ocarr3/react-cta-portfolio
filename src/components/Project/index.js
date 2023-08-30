@@ -4,11 +4,13 @@ import {Loader} from 'react-loaders';
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters';
 import {useSpring, animated} from "react-spring";
-import {MapContainer, TileLayer, useMapEvents} from "react-leaflet";
+import {MapContainer, TileLayer, useMapEvents, GeoJSON} from "react-leaflet";
 import ReactLeafletKml from 'react-leaflet-kml';
+import hash from 'object-hash';
 import * as L from 'leaflet';
 
 import "leaflet/dist/leaflet.css";
+import { StyleSheet } from '@react-pdf/renderer';
 
 
 function Number({ n, f, t }) {
@@ -31,52 +33,86 @@ const LocationClick = () => {
         {
             click(e) {
                 console.log(e.latlng)
+                console.log(e)
             },
         }
     );
     return null
 };
 
+const onEachLine = (line, layer) => {
+    
+}
+
+
+
+
+
 
 
 const Project = () => {
-
-    const [kml, setKml] = React.useState(null);
     
+    const [ctaJson, setctaJson] = useState([]);
     const [letterClass, setLetterClass] = useState('text-animate-cta')
+
+    async function getData () {
+        await fetch("https://ocarr3.github.io/react-cta-portfolio/data/doc.geojson"
+        
+        )
+            .then((response) => {
+                console.log(response)
+                return response.json();
+            })
+            .then((myJson) => {
+                console.log(myJson);
+                setctaJson(myJson)
+            }
+            );
+        
+        console.log("Completed");
+    
+    }
+
+
+
+    useEffect(() => {
+        let data = getData();
+        console.log(data)
+        if (ctaJson === null) {
+            return <>Loading...</>
+        }
+    
+    }, [])
+
+    
+
+    
+    
     
     
     useEffect(() => {
         
-
         let timeoutId = setTimeout(() => {
             setLetterClass('cta-text-animate-hover')
         }, 8000)
 
         
-        
-
         return () => {
             clearTimeout(timeoutId)
         }
     }, []);
 
-    React.useEffect(() => {
-        fetch (
-            "https://ocarr3.github.io/react-cta-portfolio/data/doc.kml"
+    if(ctaJson == undefined){
+        console.log("NUKKKKKK")
+        return (
+            <>Loading...</>
         )
-           .then((res) => res.text())
-           .then((kmlText) => {
-            const parser = new DOMParser();
-            const kml = parser.parseFromString(kmlText, "text/xml");
-            setKml(kml);
-           }); 
-    }, []);
+    }
 
+    
 
     return (
         <>
-        
         <div className = "container project-page">
             <div className = "text-zone">
                 <h2>
@@ -143,8 +179,16 @@ const Project = () => {
                             attribution = 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://www.OpenStreetMap.org">OpenRailwayMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
                             url = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                         />
+                        <GeoJSON data = {ctaJson.features} key={JSON.stringify(ctaJson)} onEachFeature={onEachLine}
+                            style = {function(feature) {
+                                return {
+                                   color: feature.properties.stroke,
+                                };
+                            }
+                        }
+                                />
                         <LocationClick/>
-                        {kml && <ReactLeafletKml kml = {kml} />}
+                        
                     </MapContainer>
                 </div>
                 <p>
