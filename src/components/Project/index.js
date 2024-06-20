@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useEffect, useState, props, Component} from 'react';
 import * as React from "react";
 import {Loader} from 'react-loaders';
 import './index.scss'
@@ -8,9 +8,13 @@ import {MapContainer, TileLayer, useMapEvents, GeoJSON} from "react-leaflet";
 import ReactLeafletKml from 'react-leaflet-kml';
 import hash from 'object-hash';
 import * as L from 'leaflet';
-
+import $ from 'jquery';
+import Button from '../Button'
 import "leaflet/dist/leaflet.css";
 import { StyleSheet } from '@react-pdf/renderer';
+
+
+
 
 
 function Number({ n, f, t }) {
@@ -40,22 +44,39 @@ const LocationClick = () => {
     return null
 };
 
-const onEachLine = (line, layer) => {
-    
-}
-
-
-
-
-
 
 
 const Project = () => {
-    
-    const [ctaJson, setctaJson] = useState([]);
-    const [letterClass, setLetterClass] = useState('text-animate-cta')
 
-    async function getData () {
+    const [ctaRides, setctaRides] = useState([]);
+    const [ctaJson, setctaJson] = useState([]);
+    const [letterClass, setLetterClass] = useState('text-animate-cta');
+    const [currentLine, setCurrentLine] = useState("No Line Selected");
+    
+    const onEachLine = (line, layer) => {
+        layer.on('click', function (e) {
+            
+            console.log(e.target.feature.properties.name);
+            setCurrentLine(e.target.feature.properties.name);
+          });
+    }
+
+    const getCTAData = (line)  => {
+        console.log("data grab function")
+        $.ajax({
+            url: "https://data.cityofchicago.org/resource/5neh-572f.json?color=Blue",
+            type: "GET",
+            data: {
+            "$limit" : 5000,
+            "$$app_token" : "ft0dmXGxiQ6ZRuu3NASaSZGmm"
+            }
+        }).done(function(data) {
+            alert("Retrieved " + data.length + " records from the dataset!");
+            console.log(data);
+        });
+    }
+    
+    async function getGeoData () {
         await fetch("https://ocarr3.github.io/react-cta-portfolio/data/doc.geojson"
         
         )
@@ -69,14 +90,12 @@ const Project = () => {
             }
             );
         
-        console.log("Completed");
+        console.log("GeoJSON Grab Completed");
     
     }
 
-
-
     useEffect(() => {
-        let data = getData();
+        let data = getGeoData();
         console.log(data)
         if (ctaJson === null) {
             return <>Loading...</>
@@ -84,12 +103,6 @@ const Project = () => {
     
     }, [])
 
-    
-
-    
-    
-    
-    
     useEffect(() => {
         
         let timeoutId = setTimeout(() => {
@@ -101,15 +114,6 @@ const Project = () => {
             clearTimeout(timeoutId)
         }
     }, []);
-
-    if(ctaJson == undefined){
-        console.log("NUKKKKKK")
-        return (
-            <>Loading...</>
-        )
-    }
-
-    
 
     return (
         <>
@@ -185,18 +189,20 @@ const Project = () => {
                                    color: feature.properties.stroke,
                                 };
                             }
-                        }
-                                />
-                        <LocationClick/>
-                        
+                        }/>
                     </MapContainer>
                 </div>
                 <p>
                     Click on a line on the CTA you're interested in on the map above and select from options below    
                 </p>
                 <p>
-                    The currently selected line is:   
+                    The currently selected line is: {currentLine} 
                 </p>
+                <div className='interface button'>
+                    <Button onClick={getCTAData} style={{backgroundColor : 'purple', color : 'white'}}>
+                        Click Here!
+                    </Button>
+                </div>
             </div>
         </div>
         

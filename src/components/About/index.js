@@ -33,22 +33,15 @@ const About = () => {
                     />
                 </h1>
                 <p>
-                I'm a passionate and driven software engineer eager to kickstart my career in the industry. 
-                As a recent graduate with a solid foundation in relevant langaugues and frameworks, 
-                I am excited to apply my skills and contribute to innovative projects.
-                </p>
+                    I'm a passionate and driven software engineer eager to kickstart my career in the industry. As a recent graduate with a solid foundation in relevant languages and frameworks, I am excited to apply my skills and contribute to innovative projects.
+                
                 <p>
-                During my time in university, I had the opportunity to work on various hands-on projects, both individually and collaboratively, 
-                which provided me with valuable experience in problem-solving, code optimization, and software development lifecycle. I believe in the power of collaboration and effective communication 
-                to foster a positive and productive work environment. I am always eager to learn from my peers and actively contribute to a team's success.
-                </p>
+                    During my time in college, I had the opportunity to work on various hands-on projects, both individually and collaboratively, which provided me with valuable experience in problem-solving, code optimization, and the software development lifecycle.
+                    I believe in the power of collaboration and effective communication to foster a positive and productive work environment. I am always eager to learn from my peers and actively contribute to a team's success.</p>
                 <p>
-                I am an eager learner that loves to see their work come to life that enjoys the problem solving aspect of projects. If there is an idea for a feature or product I'm ready to dive head first into getting towards
-                that goal, whether it be with the skills that I already have or ready to learn the skills that would take me there. 
-                </p>
-                <p>
-                As a big fan of sports I'm of big supporter of German club FC Bayern and always looking to support Mexico's national team in soccer. Recently I've become interested in the NFL and I am excited to see where the Chicago Bears
-                end up as they continiously improve.
+                I am an eager learner that loves to see their work come to life that and enjoys the problem-solving aspect of projects. If there is an idea for a feature or product I'm ready to dive head first into getting towards that goal, whether it be with the skills that I already have or ready to learn the skills that would take me there.
+                </p>    
+                   As a big fan of sports I'm a big supporter of German club FC Bayern and always looking to support Mexico's national team in soccer. Recently I've become interested in the NFL and I am excited to see where the Chicago Bears end up as they continiously improve.
                 </p>
             </div>
 
